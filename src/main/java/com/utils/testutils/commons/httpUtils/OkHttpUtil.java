@@ -4,17 +4,20 @@ import lombok.extern.slf4j.Slf4j;
 import okhttp3.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.Map;
 
 @Slf4j
+@Component
 public class OkHttpUtil {
     private  final Logger logger = LoggerFactory.getLogger(OkHttpUtil.class);
 
-    //    @Resource
-//private OkHttpClient okHttpClient;
-    private OkHttpClient okHttpClient = new OkHttpClient();
+    @Autowired
+    private OkHttpClient okHttpClient;
+//    private OkHttpClient okHttpClient = new OkHttpClient();
 
     /**
      * 用于get请求url拼接字符串

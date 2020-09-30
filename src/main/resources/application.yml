@@ -15,11 +15,12 @@ spring:
       timeout: 1000
 
   datasource:
+    url: jdbc:mysql://127.0.0.1:3306/testutil_demo?characterEncoding=utf-8
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: org.apache.commons.dbcp2.BasicDataSource
     dbcp2:
-      url: jdbc:mysql://127.0.0.1:3306/db_demo?serverTimezone=GMT%2B8&characterEncoding=utf-8
-      username: root
-      password: 123456
-      driver-class-name: com.mysql.jdbc.Driver
       initial-size: 5
       min-idle: 2
       max-total: 20
@@ -29,7 +30,6 @@ spring:
       validation-query: SELECT 1 FROM DUAL
       test-while-idle: true
       test-on-borrow: false
-    type: org.apache.commons.dbcp2.BasicDataSource
 
   pagehelper:
     helperDialect: mysql
